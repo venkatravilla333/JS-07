@@ -1,0 +1,231 @@
+1) Introduction
+===============    
+         
+1) what is JS?
+
+   JS is a programing language which is used to develop dynamic web and mobile apps.
+
+   By using JS we can manipulate (add, update, delete) DOM.
+
+   By using JS we can perform validations.
+
+2) What is ES?
+
+   Ecma Script is a specification for JS.
+
+3) What is nodejs? 
+   
+   Node js is a run time environment for JS.
+   By using nodejs we can create APIs.
+   Node js is not a programing lanaguage.
+   Node js is not a library.
+   Node js is not a framework.  
+   
+
+2) Setup Development environment?
+   =============================
+
+
+  2) Front-end
+
+    - We need a Browser (Chrome).
+    - We need an IDE to write code (vs code).
+    - We need a HTML file to run js code in front-end. 
+    - Every browser has js engine in it to run js code. 
+
+  3) Back-end
+
+    - We need to install Nodejs to run js code in back-end.
+    - We need an IDE to write code. 
+    - Nodejs is a runtime environment for js.
+    - By using nodejs js we can create APIs.
+    - How to run js file in nodejs
+
+     => node filenane
+
+
+
+3) Basics 
+=========
+
+=> When to store data?
+ 
+   We need to store data in memory, when there is need in app.
+
+=> How to store data in memory?
+ 
+   By using var, let, const, we can store data in memory. 
+   We can perform some operations on the data which is stored in memory 
+                          
+
+=> What to store in memory? 
+
+   We have to store values (data) by using data types. These are the real values to do any functionality.
+
+1) variables (we need variables to manipulate/perform some operation/update/delete/save)
+
+   We will declare variables by using var, let, const keywords.
+
+2) data types
+
+    Primitive data types: we use primitives data types to store single value in memory.
+    --------------------
+
+    Note: All primitive data types will store value directly in memory.
+
+    1) string: 
+
+       String is collection of characters to be stored in memory. 
+       By using '' "" `` we can store string in memory.
+
+    2) number: 
+
+       We can store numbers in memory by using number data type. 
+       whether it is integer or float number.
+ 
+    3) boolean: 
+
+       We can store true or false in memory by using boolean datatype.
+
+    4) undefined:
+ 
+       undefined means a variable has been declared but it's value has not been assigned. 
+
+    5) null: 
+
+       Null means an empty value. The variable which has been assigned as null contains no value.
+
+
+   Reference data types: we use reference data types to store multiple values in memory.
+   --------------------
+
+   Note: All reference data types will store value somewhere in memory location. The stored memory location address will be stored in main memory.
+
+    1) Object:
+
+      By using object we can store multiple values in single memory location in the form of
+      key & value pair.
+    
+      By using dot operator we can access the object values in app.
+  
+      Objects are often used to model real-world entities such as a person, car, or any other entity that has properties and behaviors.
+
+      
+    2) Array:
+   
+      By using array we can store collection of values in single memory location. It stores only values. Internally js attaches index numbers to the values in array. By using index numbers we can access array values in app.
+ 
+    3) Function:
+
+    - Funtion is block of code. By using a function we can do some task and return some value.
+    - For every function call seperate excution context will be created. 
+    - For every excution context, there are memory creation phase and code excution phase. 
+    - We can stores multiple values in functional scope. 
+      
+
+   ES-6
+   ----
+   4) Map
+   5) WeakMap
+   6) Set
+   7) WeakSet
+
+3) typeOf operator 
+
+  - By using typeof operator we can find data type for the value which is stored in memory.
+
+    value : datatype
+
+   'sachin': string
+   40: number
+   true/false: boolean
+   undefined: undefined
+   null: object
+   {}: object
+   []: object
+   function(){}: function
+   
+
+4) operators:
+=============
+
+why operators?
+
+we use operators to develop some logic or expression in combination with variables.
+
+1) Arithmatic
+
+We use arithmatic operators to perform some mathematical operations.
+
+   + add
+   - subtraction
+   * multification
+   / devision
+   % remainder
+   ** exponential
+   ++ incremental : It increases 1 at a time.
+   __ decremental : It decreases 1 at a time.
+
+2) Assignment (=)
+
+   By using assignment operator we can assign/store value (data) to a variable.
+   
+
+3) Comparision
+
+   It compares the two values, the result from this operators will be true/false. 
+
+    1) Rational/Relational
+
+    >
+    >=
+    <
+    <=
+
+   2) Equality 
+    
+    1) Loose equality (==) It compares only value of variables
+    2) Strict equality (===) It compares value and data type of variables
+
+     undefined == null
+     undefined === null
+
+   3) Not equality 
+
+     1) Loose inequality (!=)
+
+     The != operator is the inequality operator. It checks whether two values are not equal, regardless of their types. If the values are different, it returns true. If the values are the same, it returns false. 
+    
+     2) Strict inequality (!==)
+
+     The !== operator is the strict inequality operator. It checks whether two values are not equal and whether they are of the same type. If the value or the type are different, 
+     it returns true; otherwise, it returns false.
+
+   
+
+4) Ternary operator
+
+   We use ternary operator to render content conditionally.
+
+   let age = 15;
+
+   let vote = age >= 18 ? 'Having vote' : 'Not having vote';
+
+   console.log(vote);
+
+
+5) Logical operator
+
+  In JavaScript, logical AND (&&) and logical OR (||) are operators used to perform logical operations on boolean values or expressions.
+
+  1) logical and && 
+
+  2) logical or ||
+
+  3) ! Operator
+
+     The exclamation mark (!) is the logical NOT operator.
+
+     When used, it converts a true value to false and vice versa.
+   
+     ! is the logical NOT operator, used for negating boolean values.
