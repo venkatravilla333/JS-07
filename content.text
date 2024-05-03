@@ -229,3 +229,84 @@ We use arithmatic operators to perform some mathematical operations.
      When used, it converts a true value to false and vice versa.
    
      ! is the logical NOT operator, used for negating boolean values.
+
+
+     6) Control statements
+=====================
+
+We use control statements to develop some logic or functionality when we have multiple conditions.
+
+1) if else
+----------
+
+ - In JavaScript, the if...else statement is used for conditional execution of code. It allows you to perform different actions based on a specific condition.
+ 
+   The syntax of the if...else statement is as follows:
+
+  if (condition) {
+   // Code block to be executed if the condition is true
+   } else {
+   // Code block to be executed if the condition is false
+   }
+
+ const num = 10;
+
+ if (num > 0) {
+  console.log("Positive");
+ } else if (num < 0) {
+  console.log("Negative");
+ } else {
+  console.log("Zero");
+ }
+
+
+
+2) switch case (It does not work for step value)
+--------------
+
+ - In JavaScript, the switch statement is another way to perform conditional excution of code based on the value of an expression. It is often used as an alternative to multiple if...else statements.
+
+ - The switch statement evaluates an expression once and then matches the value of the expression to a case label. If a matching case label is found, the corresponding block of code is executed.
+
+   switch (expression) {
+     case value1:
+     // Code to be executed if the expression matches value1
+     break;
+     case value2:
+     // Code to be executed if the expression matches value2
+     break;
+     // Add more cases as needed
+     default:
+     // Code to be executed if none of the cases match the expression
+     break;
+    }
+
+  Ex:
+
+  const dayOfWeek = 3;
+
+  switch (dayOfWeek) {
+   case 1:
+    console.log("Monday");
+    break;
+   case 2:
+    console.log("Tuesday");
+    break;
+   case 3:
+    console.log("Wednesday");
+    break;
+   case 4:
+    console.log("Thursday");
+    break;
+   case 5:
+    console.log("Friday");
+    break;
+   case 6:
+    console.log("Saturday");
+    break;
+   case 7:
+    console.log("Sunday");
+    break;
+   default:
+    console.log("Invalid day");
+  }
