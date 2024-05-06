@@ -366,3 +366,103 @@ Note:
 
 - It's important to note that the for...in loop should be used for iterating over object properties. If you want to loop through elements of an array, it is recommended to use the for...of loop or a simple for loop with an index.
 - keep in mind that the for...of loop is not suitable for iterating over regular objects (objects created with {}) since they are not iterable by default. For iterating through object properties, you should use the for...in loop.
+
+
+8) Funtions
+===========
+
+1) What is function?
+
+  =>Function is a block of code which is used to do some task and return value. 
+  =>It stores multiple values in functional scope. 
+  =>For every function call seperate excution context will be created. 
+    For every excution context there are memory creation phase and code excution phase.
+
+2) How can we define function?
+
+    1) Function declaration
+
+    2) Function expression
+   
+          1) named fucntion expression
+          2) anonymous function expression
+          3) arrow function (ES-6)
+   
+3) parameters vs arguments
+
+ Parameters
+ ---------
+
+ - Parameters are the placeholders or variables defined in the function's declaration.
+ - They are like local variables that store the values passed to the function when it is called.
+ - They are defined within the function's parentheses in the function declaration and serve as placeholders for the arguments that will be provided when the function is called.
+
+ Arguments
+ ---------
+ - Arguments are the actual values or expressions passed to a function when it is called.
+ - They represent the data that you want to work with within the function.
+ - The number of arguments should match the number of parameters defined in the function.
+ - Arguments are provided in the function call and are placed inside the parentheses.
+
+
+4) what is default parameter
+   
+ - Default parameters were introduced in ECMAScript 6 (ES6) and have since become a common feature in modern JavaScript.
+ - To define default parameters in a function, you assign a default value to a parameter in the function's declaration.
+ - Default parameters in JavaScript allow you to specify default values for function parameters.
+
+5) Varying no of parameters or arguments
+
+   If we have varying no of params and arguments then we have to handle with below concepts.
+
+   => arguments object (ES-5)
+      -----------------------
+      It takes all values at a time and stores in memory.
+      This is available in all functions except arrow function.
+      arguments object is an iterable object, it has symbol.iterator() method.
+
+   => rest parameter (ES-6)
+      ---------------------
+      It starts with ...
+      It takes all values and stores in array.
+      It should be last parameter in parameter list.
+          
+
+6) Scope
+
+  1) Global scope
+  2) Function / local scope
+  3) Block scope
+
+  Note:
+  ---- 
+  1) var is functionl scope
+  2) let, const is block scope
+
+
+-In Js, "scope" refers to the context in which variables, functions are stored and can be accessed. 
+-The scope determines the accessability and lifetime of these variables and functions.
+-Every execution context will create a new scope.
+-Every function call will create new execution context. 
+
+JavaScript has two main types of scope:
+
+Global Scope:
+------------
+
+Variables declared or stored outside of any function or block have global scope. 
+They can be accessed from any part of the code, including inside functions and blocks.
+
+Local Scope:
+-----------
+
+Variables declared or stored within a function or a block have local scope. They are only accessible within that specific function or block.
+
+Note: 
+
+Local variables take precedence over global variables if they share the same name.
+
+Function scope, which means that variables declared with var are only scoped within the function where they are defined.
+ 
+However, with the introduction of let and const in ES6, block scope was introduced. Variables declared with let or const are scoped to the nearest enclosing block (defined by curly braces {}).
+
