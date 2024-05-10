@@ -96,72 +96,180 @@
 
 //storage in global
 
-var a = 1
+// var a = 1
 
-let b = 2
+// let b = 2
 
-const c = 3
-//Access in global
+// const c = 3
+// //Access in global
 
-console.log(a)
-console.log(b)
-console.log(c)
+// console.log(a)
+// console.log(b)
+// console.log(c)
 
-function test() {
+// function test() {
 
-  //storage in functional scope
-  console.log(a)
-  var a = 100
-  console.log(a)
+//   //storage in functional scope
+//   console.log(a)
+//   var a = 100
+//   console.log(a)
 
-  var d = 4
-  let e = 5
-  const f = 6
+//   var d = 4
+//   let e = 5
+//   const f = 6
 
-  //access in functional scope
-  console.log(a)
-  console.log(b)
-  console.log(c)
-  console.log(d)
-  console.log(e)
-  console.log(f)
+//   //access in functional scope
+//   console.log(a)
+//   console.log(b)
+//   console.log(c)
+//   console.log(d)
+//   console.log(e)
+//   console.log(f)
   
-  if (true) {
+//   if (true) {
 
-    //storage in block
+//     //storage in block
 
-    var g = 7
-    let h = 8
-    const i = 9
+//     var g = 7
+//     let h = 8
+//     const i = 9
     
-    //access in block scope
-    console.log(a)
-    console.log(b)
-    console.log(c)
-    console.log(d)
-    console.log(e)
-    console.log(f)
-    console.log(g)
-    console.log(h)
-    console.log(i)
-  }
+//     //access in block scope
+//     console.log(a)
+//     console.log(b)
+//     console.log(c)
+//     console.log(d)
+//     console.log(e)
+//     console.log(f)
+//     console.log(g)
+//     console.log(h)
+//     console.log(i)
+//   }
 
-  console.log(g)
-  // console.log(h)
-  // console.log(i)
-}
+//   console.log(g)
+//   // console.log(h)
+//   // console.log(i)
+// }
+
+// // console.log(d)
+// // console.log(e)
+// // console.log(f)
+// // console.log(g)
+// // console.log(h)
+// // console.log(i)
+
+// test()
+
+
+
+// Hoisting
+
+// console.log(a)
+// var a = 'sachin'
+// console.log(a)
+// const a = 'sachin'
+
+// console.log(b)
+// var b = 40
+// console.log(b)
+
+// console.log(c)
+// var c = true
+// console.log(c)
 
 // console.log(d)
+// var d
+// console.log(d)
+
 // console.log(e)
+// var e = null
+// console.log(e)
+
+
 // console.log(f)
+// var f = { value: 100 }
+// console.log(f)
+
 // console.log(g)
+// var g = [1, 2, 3]
+// console.log(g)
+
 // console.log(h)
+// // h()
+// var h = function test() {
+//   console.log('named fun exp')
+// }
+// console.log(h)
+
+// console.log(i)
+// // i()
+// var i = function () {
+//   console.log('Anonymous fun exp')
+// }
 // console.log(i)
 
-test()
+// // console.log(j)
+
+// // j()
+// var j = () => {
+//   console.log('Arrow fun exp')
+// }
+// j()
+// console.log(j)
+
+
+// //Function declaration
+
+// console.log(declare)
+// declare()
+// function declare() {
+//   console.log('Fun declaration')
+// }
+// declare()
+// console.log(declare)
 
 
 
+// var vs let vs const 
+
+// re-declare 
+
+// console.log(x)
+// var x = 10
+
+// console.log(x)
+
+// console.log(x)
+// var x = 100
+// let x = 100
+// const x = 100
+
+// console.log(x)
+
+//Re-assignment
+
+// var x = 10
+// let x = 10
+// const x = 10
+// console.log(x)
+
+// x = 100
+// console.log(x)
+
+// x = 'sachin'
+
+// console.log(x)
+
+//Initilization
+
+var x 
+// let x 
+// const x
+
+console.log(x)
+
+x = 10
+console.log(x)
 
 
   

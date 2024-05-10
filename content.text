@@ -466,3 +466,47 @@ Function scope, which means that variables declared with var are only scoped wit
  
 However, with the introduction of let and const in ES6, block scope was introduced. Variables declared with let or const are scoped to the nearest enclosing block (defined by curly braces {}).
 
+
+
+7) Hoisting:
+
+  => Hoisting is default behaviour of javascript of moving all variable 
+     declarations and function declarations to top of current scope.
+  
+  => Hoisting lets you allow to access memory value even before execution of code.
+
+In JavaScript, both let and const declarations are hoisted, but they behave differently compared to var declarations.
+
+When you declare a variable using var, it gets hoisted to the top of its scope and is initialized with undefined. However, let and const are also hoisted to the top of their scope, but they are not initialized. This means that you cannot access them before the actual declaration (you'll get a ReferenceError), which is known as the "temporal dead zone."
+
+console.log(x); // undefined
+var x = 5;
+
+console.log(y); // ReferenceError: 
+let y = 10;
+
+console.log(z); // ReferenceError: z 
+const z = 15;
+
+In the above example, x is declared using var, so it gets hoisted and initialized with undefined. y and z are declared using let and const, respectively. While they are hoisted, accessing them before the actual declaration results in a ReferenceError due to the temporal dead zone.
+
+
+both let and const declarations are hoisted in JavaScript. However, unlike var, they are not initialized with undefined. Instead, they enter a "temporal dead zone" until their declaration is encountered in the code. Attempting to access a variable declared with let or const before its declaration will result in a ReferenceError due to being in this temporal dead zone. This behavior ensures that variables declared with let or const are not accessible before they are defined in the code execution flow.
+
+
+8) var vs let vs const
+
+                               var                   let                       const
+                               ---                   ---                       -----
+         
+   1) scope                   functional             block                     block
+
+   2) hoisting                yes                    yes but differently       yes but differently
+
+   3) re-declaration          yes                    no                        no
+
+   4) re-assignment           yes                    yes                       no
+
+   5) initialization          no need                no need                   need  
+
+
