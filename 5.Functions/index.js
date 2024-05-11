@@ -262,14 +262,39 @@
 
 //Initilization
 
-var x 
+// var x 
 // let x 
 // const x
 
-console.log(x)
+// console.log(x)
 
-x = 10
-console.log(x)
+// x = 10
+// console.log(x)
+
+
+// Closure 
+
+
+function outer() {
+  var x = 'sachin'
+
+  function inner() {
+    var y = 'kohli'
+    console.log(x)
+    console.log(y)
+  }
+  // return inner
+  inner()
+}
+
+outer()
+// var inner = outer()
+
+// inner()
+
+
+
+
 
 
   

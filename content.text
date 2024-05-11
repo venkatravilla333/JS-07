@@ -510,3 +510,7 @@ both let and const declarations are hoisted in JavaScript. However, unlike var, 
    5) initialization          no need                no need                   need  
 
 
+9) Closure:
+
+  =>Closure is a concept in js, it allows to inner function to access outer scope variables even after the outer function execution content is over.
+
