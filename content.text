@@ -514,3 +514,249 @@ both let and const declarations are hoisted in JavaScript. However, unlike var, 
 
   =>Closure is a concept in js, it allows to inner function to access outer scope variables even after the outer function execution content is over.
 
+
+
+  9) Objects
+==========
+
+1) What is an object?
+
+ - In JavaScript, an object is a reference data type that stores a collection of related data and functionality. 
+ - It is a container for key-value pairs, where each key is a unique identifier and each value can be of any data type, including other objects, arrays, functions, primitives (such as numbers, strings, and booleans)
+ - Objects in JavaScript are often used to model real-world entities such as a person, car, or any other entity that has properties and behaviors.
+ - JavaScript also has some built-in objects like Array, Date, Math. These built-in objects provide specialized functionality for specific use cases.
+ - You can access the properties and methods of an object using dot notation or bracket notation.
+
+2) How to create object:
+
+ 1) Object literal way
+ 3) Factory function
+ 4) Constructor function
+ 5) Classical way (ES-6)
+
+3) Objects are dynamic:
+
+ You can add, modify, or delete properties and methods of an object at runtime, making objects dynamic and flexible in JavaScript.
+
+ -add
+ -update
+ -delete
+
+4) Iterating object:
+
+  - for in loop 
+
+  - Object.keys/ Object.entries /Object.values
+
+    Object.keys => This method will create array with looped keys in object.
+    Object.values => This method will create array with looped values in object.
+    Object.entries => This method will create array with looped keys and values in object.
+
+5) Copy primitives and reference types:
+
+   =>primitives copy
+     --------------- 
+
+      By default deep copy
+
+   =>Object copy
+     -----------
+ 
+      normal copy => = (assignment operator)
+
+      swallow copy => Object.assign({}, source object) or spreed operator.
+
+      deep copy => JSON.parse(JSON.stringfy(obj)) 
+                   (it will copy only pimitives and obj, it will ignore method copy)
+
+                   cloneDeep() => lodash
+                   (it will copy all pimitives and obj and method copy)
+
+6) Math object
+--------------
+
+This is predefined object in javascript to do math related functionality.
+
+   1) min => It gives min value.
+
+   2) max => It gives max value.
+
+   3) ceil => It rounds to up value when we have float value.
+
+   4) floor => It rounds to down value when we have float value.
+
+   5) round => It rounds to up value when we have 0.5 or above and 
+               down value when we have below 0.5.
+
+   6) random => It generates random value.
+
+                - Math.random() always returns a number lower than 1.
+                
+                - Math.floor(Math.random() * 10);
+                - Returns a random integer from 0 to 9:
+     
+                - Math.floor(Math.random() * 100);
+                - Returns a random integer from 0 to 99:
+                
+   7) pow => In JavaScript, the Math.pow() function is used to calculate the power of a number. It takes two arguments: the base number and the exponent. Both Math.pow() and the exponentiation operator have the same functionality, but using the exponentiation operator can be more concise and readable in many cases.
+
+   8) sqrt => In JavaScript, the Math.sqrt() function is used to calculate the square root of a  given number. It takes a single argument, which is the number whose square root you want to find.
+
+              Math.sqrt(number);
+
+
+7) Date object
+--------------
+
+This is predefined object in javascript.
+
+By using this we can create dates.
+
+
+ 1) var now = new Date()  ===> It gives current date.
+
+ 2) var x = new Date(2040, 0, 30, 9:00) ===> It is number date type we can create custom dates.
+
+ 3) var x = new Date('2040 0 30 9') ===> It is string date type we can create custom dates.
+
+
+
+8) Garbage collector
+--------------------
+
+=> In low level languages like c, c++ when we create varible we need to allocate memory to it.
+=> when we use it we have to de-allocate memory. we dont have this concept in javascript.
+   we can easily create a variable at the time we initialized this variable the memory is
+   automatically allocated to this variable next we can use that when we are done using we 
+   dont have to de-allocate memory. 
+=> So JS engine has garbage collector. The job of this garbage collector is to find the variable      which are no longer used and then de-allocate the memory. Memory allocation and de-allocation      allomatically done behind the scene you have no control on it.You cant tell garbage collector      when to run and what varibales to remove from the memory.
+=> Based on some complex algorithms(mark and sweep) the garbage collector run in the background it    figurs out what variables are not used and then it automatically removes from memory.
+
+
+9) Template literal (ES-6)
+-------------------------
+
+Synonyms:
+
+Template Literals
+Template Strings
+String Templates
+
+=> Template strings are a powerful feature of modern JavaScript released in ES6. 
+=> It lets you insert variables and expressions into strings without needing to 
+   concatenate + like in older versions of JavaScript. 
+=> It allows us to create strings that are complex and contain dynamic elements.
+=> Template Literals use back-ticks (``) rather than the quotes ("") to define a string.
+=> Template literals allows multiline strings.
+
+   
+ syntax:   `${}`
+
+
+
+10) String Object
+-----------------
+
+
+1) String length ===> It gives string length.
+
+
+2) Removes white spaces
+
+   =>trim()      ===> It removes white space both sides.
+   =>trimStart() ===> It removes white space at starting
+   =>trimEnd()   ===> It removes white space at ending
+
+
+3) Extracting part of string
+
+   => slice(startindex, endindex)
+   => substring(startindex, endindex)
+   => substr(startindex, length)
+
+    slice()
+    -------
+
+    -The slice() method extracts a part of a string.
+
+    -The start and end parameters specifies the part of the string to extract.
+
+    -A negative number selects from the end of the string.
+
+
+    subString()
+    ----------
+
+    -The substring() method extracts characters from start to end (exclusive).
+
+    -Start or end values less than 0, are treated as 0. It does not work for negative values.
+
+
+    subStr()
+    -------
+
+    -The substr() method extracts a part of a string.
+
+    -The substr() method begins at a specified position, and returns a specified number of              characters.
+
+    -To extract characters from the end of the string, use a negative start position.
+
+
+4) Extracting string characters.
+
+   => charAt(index) - It returns the character at specified index.
+
+   => charCodeAt(index) - It returns unicode of character at specified index.
+
+
+5) Replacing string content
+
+  => replace(exitingstring, newstring).
+  => by default replace method replaces only first match.
+  => replace method is case sensitive.
+
+   
+6) Converting to upper and lower case
+
+  => toUpperCase  ==> It converts string to UPPERCASE.
+  => toLowerCase  ==> It converts string to lowercase.
+
+
+7) To Join two or more strings.
+   
+  => we use concat() method.
+  => It is used to concat two or more strings.
+  => concat method is used instead of plus operator.
+
+
+8) String padding
+
+   =>padStart(target_length, pad_string)
+   
+   =>padEnd(target_length, pad_string)
+
+   =>target_length - The desired length of the resulting string after it has been padded.
+
+
+9) Converting string into array.
+
+   =>split('')
+
+   -The split() method splits a string into an array of substrings.
+
+   -The split() method returns the new array.
+
+   -The split() method does not change the original string.
+
+   -If (" ") is used as separator, the string is split between words.
+
+
+10) Methods for finding specific string.
+
+   =>indexOf()     ==> It gives first occurance index number. if not return -1
+   =>lastIndexOf() ==> It gives last occurance index number.if not return -1
+   =>includes()    ==> It gives true if string has that that.
+   =>startsWith()  ==> It gives true if it has started with same string as you asked.
+   =>endsWith()    ==> It gives true if it has ended with same string as you asked.
+
+
