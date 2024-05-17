@@ -182,17 +182,66 @@ var person = {
 //   console.log(x)
 // }
 
-var keys = Object.keys(person)
+// var keys = Object.keys(person)
 
-console.log(keys)
+// console.log(keys)
 
-var values = Object.values(person)
+// var values = Object.values(person)
 
-console.log(values)
+// console.log(values)
 
-var entries = Object.entries(person)
+// var entries = Object.entries(person)
 
-console.log(entries)
+// console.log(entries)
+
+
+//Copy (Clone)
+
+//Primitives
+
+// var x = 10
+
+// var y = x
+
+// console.log(x)
+// console.log(y)
+// y = 20
+// console.log(x)
+// console.log(y)
+
+// import lodash from 'lodash'
+
+// var lodash = require('lodash')
+
+//Object copy
+
+// var originalObj = {
+//   name: 'sachin',
+//   address: { road: 101 },
+//   play: () => {
+//     console.log('play')
+//   }
+// }
+
+// console.log(originalObj)
+
+// var copiedObj = originalObj //normal copy
+
+// var copiedObj = JSON.parse(JSON.stringify(originalObj)) //deep copy
+// var copiedObj = lodash.cloneDeep(originalObj) // deep copy
+
+// var copiedObj = Object.assign({}, originalObj) // ES-5 shallow copy
+// var copiedObj = {...originalObj}//  ES-6 shallow copy (spread operator)
+
+// console.log(originalObj)
+// console.log(copiedObj)
+
+// copiedObj.name = 'kohli'
+// copiedObj.address.road = 201
+
+// console.log(originalObj)
+// console.log(copiedObj)
+
 
 
 
