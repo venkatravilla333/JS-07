@@ -625,8 +625,7 @@ By using this we can create dates.
 --------------------
 
 => In low level languages like c, c++ when we create varible we need to allocate memory to it.
-=> when we use it we have to de-allocate memory. we dont have this concept in javascript.
-   we can easily create a variable at the time we initialized this variable the memory is automatically allocated to this variable next we can use that when we are done using we dont have to de-allocate memory. 
+=> when we use it we have to de-allocate memory. we dont have this concept in javascript. we can easily create a variable at the time we initialized this variable the memory is automatically allocated to this variable next we can use that when we are done using we dont have to de-allocate memory. 
 => So JS engine has garbage collector. The job of this garbage collector is to find the variable which are no longer used and then de-allocate the memory. Memory allocation and de-allocation allomatically done behind the scene you have no control on it.You cant tell garbage collector when to run and what varibales to remove from the memory.
 => Based on some complex algorithms(mark and sweep) the garbage collector run in the background it figurs out what variables are not used and then it automatically removes from memory.
 

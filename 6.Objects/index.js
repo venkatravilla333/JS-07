@@ -243,6 +243,129 @@ var person = {
 // console.log(copiedObj)
 
 
+//Math object
+
+// var x = 10
+
+// var y = 21
+
+// console.log(Math.min(x, y, 20, 3))
+// console.log(Math.max(x, y, 20, 3))
+// console.log(Math.floor(20.9))
+// console.log(Math.floor(20.1))
+// console.log(Math.ceil(20.1))
+// console.log(Math.ceil(20.8))
+// console.log(Math.round(20.5))
+// console.log(Math.round(20.8))
+// console.log(Math.round(20.4))
+// console.log(Math.round(20.1))
+// console.log(Math.random())
+// console.log(Math.floor(Math.random()))
+// console.log(Math.ceil(Math.random()))
+// console.log(Math.ceil(Math.random()*10))
+// console.log(Math.ceil(Math.random()*100))
+// console.log(Math.ceil(Math.random()*1000))
+// console.log(Math.ceil(Math.random()*10000))
+// console.log(Math.pow(10,3))
+// console.log(Math.sqrt(25))
+// console.log(Math.sqrt(9))
+
+// console.log(Math)
+
+
+
+// console.log(x)
+//  x = 100
+// console.log(x)
+
+
+//Date object
+
+// var now = new Date()
+
+// console.log(now)
+
+// get methods
+
+// console.log(now.getDate())
+// console.log(now.getFullYear())
+// console.log(now.getMonth())
+// console.log(now.getHours())
+// console.log(now.getMinutes())
+
+// setMethods
+
+// now.setFullYear(2050)
+// now.setDate(20)
+// now.setMonth(11)
+
+// console.log(now)
+// console.log(now.getFullYear())
+// console.log(now.getDate())
+// console.log(now.getMonth())
+
+// var date1 = new Date(2040, 6, 20, 10, 20, 40) //number type
+
+// console.log(date1)
+
+// get methods
+
+// console.log(date1.getFullYear())
+// console.log(date1.getDate())
+// console.log(date1.getMonth())
+// console.log(date1.getHours())
+// console.log(date1.getMinutes())
+// console.log(date1.getSeconds())
+
+//set Methods
+
+// date1.setFullYear(2000)
+// date1.setDate(10)
+// date1.setMonth(10)
+// console.log(date1)
+
+// var date2 = new Date('1990 dec 31 9:15:30')
+
+// console.log(date2)
+
+// get methods
+// console.log(date2.getFullYear())
+// console.log(date2.getMonth())
+// console.log(date2.getDate())
+// console.log(date2.getDay())
+// console.log(date2.getHours())
+// console.log(date2.getMinutes())
+// console.log(date2.getSeconds())
+
+//set Methods
+
+// date2.setFullYear(1990)
+// date2.setDate(10)
+// date2.setMonth(5)
+// console.log(date2)
+
+
+//Template string (ES-6)
+
+var name = 'sachin'
+
+var age = 40
+
+// without template string 
+
+console.log('Hi' + ' ' + name + ' ' + 'How are you' + ' ' + 'age is' + ' ' + age)
+
+// with template string
+
+console.log(`Hi ${name} How are you age is ${age}`)
+
+
+
+
+
+
+
+
 
 
 
