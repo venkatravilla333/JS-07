@@ -347,17 +347,147 @@ var person = {
 
 //Template string (ES-6)
 
-var name = 'sachin'
+// var name = 'sachin'
 
-var age = 40
+// var age = 40
 
 // without template string 
 
-console.log('Hi' + ' ' + name + ' ' + 'How are you' + ' ' + 'age is' + ' ' + age)
+// console.log('Hi' + ' ' + name + ' ' + 'How are you' + ' ' + 'age is' + ' ' + age)
 
 // with template string
 
-console.log(`Hi ${name} How are you age is ${age}`)
+// console.log(`Hi ${name} How are you age is ${age}`)
+
+
+// String object
+
+// var msg = ' Hi how are you '
+var msg = 'Hi how are you bye you'
+
+//Length
+
+// console.log(msg)
+// console.log(msg.length)
+
+//Trim
+
+// console.log(msg.trim().length)
+
+// trimStart
+
+// console.log(msg.trimStart().length)
+
+// trimEnd
+
+// console.log(msg.trimEnd().length)
+
+//slice
+
+// var copyContent = msg.slice()
+// var copyContent = msg.slice(0)
+// var copyContent = msg.slice(4, 7)
+// var copyContent = msg.slice(-3)
+// console.log(copyContent)
+
+//subString
+
+
+// var copyContent = msg.substring()
+// var copyContent = msg.substring(0)
+// var copyContent = msg.substring(2)
+// var copyContent = msg.substring(2, 6)
+// var copyContent = msg.substring(-3)
+// console.log(copyContent)
+
+// var copyContent = msg.substr()
+// var copyContent = msg.substr(0)
+// var copyContent = msg.substr(2)
+// var copyContent = msg.substr(0, 6)
+// var copyContent = msg.substr(-3)
+
+// console.log(copyContent)
+
+// charAt
+
+// console.log(msg.charAt(0))
+// console.log(msg.charAt(3))
+
+// chatCodeAt
+
+// console.log(msg.charCodeAt(0))
+// console.log(msg.charCodeAt(3))
+
+//replace
+
+// var msgnew = msg.replace('you', 'sachin')
+// var msgnew = msg.replace('You', 'sachin')
+// var msgnew = msg.replace('you', 'sachin')
+// console.log(msg)
+// console.log(msgnew)
+
+//case conversion
+
+// toLowerCase
+
+// console.log(msg.toLowerCase())
+
+// toUpperCase
+
+// console.log(msg.toUpperCase())
+
+//concat
+
+
+// console.log(msg.concat(' where are you'))
+
+
+// padStart
+
+// var message = 'hi'
+
+// console.log(message.padStart(6, 3))
+// console.log(message.padStart(6, 10))
+
+// padEnd
+
+// console.log(message.padEnd(6, 3))
+// console.log(message.padEnd(6, 10))
+
+//split
+
+// var arr = msg.split()
+// var arr = msg.split('')
+// var arr = msg.split(' ')
+// console.log(arr)
+
+//indexOf
+
+// console.log(msg.indexOf('you'))
+// console.log(msg.indexOf('kohli'))
+
+// lastIndexOf
+
+// console.log(msg.lastIndexOf('you'));
+// console.log(msg.lastIndexOf('kohli'));
+
+// includes
+
+// console.log(msg.includes('you'))
+// console.log(msg.includes('kohli'))
+
+//startsWith
+
+// console.log(msg.startsWith('Hi'))
+// console.log(msg.startsWith('you'))
+
+// endsWith 
+
+// console.log(msg.endsWith('you'))
+// console.log(msg.endsWith('Hi'))
+
+
+
 
 
 
