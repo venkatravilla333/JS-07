@@ -640,8 +640,7 @@ Template Strings
 String Templates
 
 => Template strings are a powerful feature of modern JavaScript released in ES6. 
-=> It lets you insert variables and expressions into strings without needing to 
-   concatenate + like in older versions of JavaScript. 
+=> It lets you insert variables and expressions into strings without needing to concatenate + like in older versions of JavaScript. 
 => It allows us to create strings that are complex and contain dynamic elements.
 => Template Literals use back-ticks (``) rather than the quotes ("") to define a string.
 => Template literals allows multiline strings.
@@ -694,7 +693,7 @@ String Templates
 
     -The substr() method extracts a part of a string.
 
-    -The substr() method begins at a specified position, and returns a specified number of              characters.
+    -The substr() method begins at a specified position, and returns a specified number of characters.
 
     -To extract characters from the end of the string, use a negative start position.
 
@@ -755,5 +754,317 @@ String Templates
    =>includes()    ==> It gives true if string has that that.
    =>startsWith()  ==> It gives true if it has started with same string as you asked.
    =>endsWith()    ==> It gives true if it has ended with same string as you asked.
+
+
+   1) What is an array.
+
+ - In JavaScript, an array is a data structure used to store a collection of values. 
+   Arrays allow you to store multiple values of different types or the same type into a single variable, making it easier to manage and manipulate collections of data. 
+   Each value in an array is referred to as an "element," and each element has an associated index, starting from 0 for the first element.
+
+   Here's how you can create an array in JavaScript:
+
+
+   Creating an array of numbers
+
+   const numbers = [1, 2, 3, 4, 5];
+
+   Creating an array of strings
+
+   const fruits = ['apple', 'banana', 'orange'];
+
+   Creating an array of mixed types
+
+   const mixedArray = [1, 'hello', true, null, undefined];
+
+   You can access elements in an array using their index:
+
+   console.log(numbers[0]); // Outputs: 1
+   console.log(fruits[1]); // Outputs: banana
+
+ - Arrays have a variety of methods that you can use to manipulate their contents, such as adding or removing elements, iterating through elements. 
+
+   Here are a few common array methods:
+
+   push: Adds an element to the end of the array.
+   pop: Removes the last element from the array.
+   shift: Removes the first element from the array.
+   unshift: Adds an element to the beginning of the array.
+   length: Returns the number of elements in the array.
+   splice(): Can be used to add, remove, or replace elements at a specific position in the array.
+   concat(): Combines two or more arrays to create a new array.
+   slice(): Creates a new array by extracting a portion of the existing array. Creates a shallow copy of a portion of an array.
+   forEach: Executes a function for each element in the array.
+   map: Creates a new array by applying a function to each element in the array.
+   filter: Creates a new array with elements that pass a test condition.
+
+
+2) adding of elements to an array
+
+   push: It adds new item to end of array.
+   unshift: It adds new item to start of array.
+   splice: It adds new item at any place in array.
+
+
+
+3) removing specific element from an array
+
+   pop: It removes end value in array.
+   shift: It removes start value in array.
+   splice: It removes value in any where in array.
+
+4) removing all elements from an array
+
+    []
+
+    length = 0
+
+    splice()
+
+5) finding of elements in an array
+
+   primitives:
+   -----------
+
+   indexOf: It finds index of value at first occurance in array. 
+            If that value is not find in array it gives -1
+
+   lastIndexOf: It finds index of value at last occurance in array. 
+                If that value is not find in array it gives -1
+
+   includes: If given is in array then it gives true as output. 
+             If given value is not found in array it gives false as output.
+
+   reference:
+   ----------
+
+   find: 
+         It finds the whether the given value is in array then it returns the same value. 
+         If the given value is not there in array then it returns undefind.
+
+   findeIndex: 
+         It finds the whether the given value is in array then it returns the index number 
+         of that value.If the given value is not there in array then it returns -1.
+    
+
+6) combining two or more arrays as one array.
+
+   1) concat() => es-5
+
+         var combineArr = arr1.concat(arr2)
+
+   2) spread operator => es-6
+
+         var combineArr = [...arr1, ...arr2]
+
+7) copy/clone an array. 
+
+   1) Normal copy => (= assignment operator)
+
+
+   2) Shallow copy 
+                  => ES-5 slice() 
+                  => ES-6 spread operator
+   3) Deep copy
+                 => without method JSON.parse(JSON.stringfy(array))
+                 => with method lodash (cloneDeep(array))
+
+1) Normal copy
+
+
+2) Shallow copy
+
+1. Using the slice() Method:
+
+ - The slice() method can be used to create a shallow copy of an array. It takes two optional arguments: the starting index and the ending index. If no arguments are provided, it copies the entire array.
+
+
+    const originalArray = [1, 2, 3, 4, 5];
+    const shallowCopy = originalArray.slice();
+
+2. Using the Spread Operator ([...]):
+
+ - The spread operator allows you to create a shallow copy of an array in a concise way.
+
+    const originalArray = [1, 2, 3, 4, 5];
+    const shallowCopy = [...originalArray];
+
+ - Both of these methods create a new array that contains the same elements as the original array. However, keep in mind that the elements themselves are still references to the same objects. If the array contains objects or arrays, changes made to those objects or arrays will be reflected in both the original array and the shallow copy.
+
+    const originalArray = [{ value: 1 }, { value: 2 }, { value: 3 }];
+    const shallowCopy = originalArray.slice();
+
+    shallowCopy[0].value = 100;
+
+    console.log(originalArray[0].value);  // Output: 100
+    console.log(shallowCopy[0].value);     // Output: 100
+
+ - As seen in the example, modifying an object within the shallow copy also affects the corresponding object in the original array. If you need to create an independent copy where changes to one array don't affect the other, you would need a deep copy.
+
+3) Deep copy
+
+ - you can create a deep copy of an array using the lodash library in JavaScript. Lodash provides a convenient method called _.cloneDeep() that allows you to create a deep copy of an array or any nested data structure, handling all the complexities of deep copying effectively.
+
+ - cloneDeep() function from the lodash library takes care of creating a complete and independent  copy of the array and its nested elements, ensuring that modifications to the deep copy do not  affect the original array.
+
+
+8) iterating of elements in an array
+
+   1) for of:
+
+       =>for of loop iterates an array values only.
+
+   2) forEach:
+
+      =>The forEach() method calls a function for each element in an array.
+
+      =>forEach() method is used to loop through values and index of an array.
+        forEach method does not return any value. It returns undefined.
+
+       
+
+9) Joining of an array
+
+   join()
+
+      =>The join() method returns an array as a string.
+
+      =>The join() method does not change the original array.
+
+      =>Any separator can be specified. The default is comma (,).
+
+
+10) testing of an array elements
+
+    1) some():
+
+    =>some method in JavaScript is used to check whether at least one of the elements of the array satisfies the given condition or not. 
+    =>The only difference is that the some() method will return true if any predicate is true while every() method will return true if all predicates are true. 
+    
+    2) every():
+
+    =>every method in JavaScript is used to check whether all the elements of the array satisfy the given condition or not. 
+    =>The output will be false if even one value does not satisfy the element, 
+      else it will return true, and it opposes the some() function.
+
+11) filtering of array
+
+    filter()
+
+       =>The filter() method creates a new array filled with elements that pass a test provided by a function.
+       =>The filter() method does not execute the function for empty elements.
+       =>The filter() method does not change the original array.
+
+12) Sorting of an array
+
+   1) Ascending order
+
+   2) Descending order
+
+    primitives:
+    ---------
+    sort()
+    reverse()
+
+    reference:
+    ---------
+    sort + comparison function
+
+    => nested for loop
+
+
+13) mapping of array
+
+    map()
+
+      =>The map() method creates a new array populated with the results of 
+        calling a provided function on every element in the calling array.
+      =>It returns new array with transforming values. 
+
+14) reduce of array
+
+    reduce()
+
+    =>The reduce() method executes a reducer function for array element.
+
+    =>The reduce() method returns a single value: the function's accumulated result.
+
+    =>The reduce() method does not change the original array.
+
+
+15) Flattening of array(converting multi dimensional array into single dimension array).
+
+    1) flat() method
+
+    2) Array.isArray() 
+
+
+16) How to remove dulpicate elements in an array. 
+
+    1) Set with spread operator
+   
+    2) indexOf() 
+
+
+17) map() vs forEach()
+    -----------------
+
+  - The map() method returns a new array, whereas the forEach() method does not return a new array
+
+  - The map() method is used to transform the elements of an array, whereas the forEach() method is used to loop through the elements of an array.
+
+
+18) Array.from()
+    ------------
+
+ - The Array.from() method returns an array from any object with a length property.
+
+ - The Array.from() method returns an array from any iterable object.
+
+ - Array.from() is an ECMAScript6 (ES6) feature.
+
+ - Array.from(object, ()=>{} )
+
+ - object: This parameter holds an object that will convert into an array.
+
+
+This method can create an array from:
+
+-array-like objects - The objects that have length property and have indexed elements like String.
+-Iterable objects like Map or Set.
+
+Return Value
+
+-Returns a new Array instance.
+
+
+The Array.from() method, which is new in ES6, creates a new instance of the Array from an object that acts like an array or is iterable. The syntax for the Array.from() method is shown below:
+
+Array.from(target [, mapFn[, thisArg]])
+
+target is an object to be converted into an array that is iterable or array-like. The map function, or mapFn, should be used on each element of the array.The value used to call the mapFn method is thisArg.
+A new instance of Array is returned by the Array.from() method, and it contains every element of the source object.
+
+19) at()
+
+The at() method takes an integer value and returns the item at that index, allowing for positive and negative integers. Negative integers count back from the last item in the array.
+
+
+20) fill()
+
+
+The fill() method in JavaScript is used to fill all the elements of an array from a start index to an end index with a static value.
+
+It mutates the original array and returns the modified array.
+
+The fill() method in JavaScript is used to fill all the elements of an array from a start index to an end index with a static value.
+
+It mutates the original array and returns the modified array.
+
+
+21) Array.isArray()
+
+The Array.isArray() static method determines whether the passed value is an Array or not.
+
 
 

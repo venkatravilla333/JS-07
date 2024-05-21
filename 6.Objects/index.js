@@ -363,7 +363,7 @@ var person = {
 // String object
 
 // var msg = ' Hi how are you '
-var msg = 'Hi how are you bye you'
+// var msg = 'Hi how are you bye you'
 
 //Length
 
@@ -483,7 +483,7 @@ var msg = 'Hi how are you bye you'
 
 // endsWith 
 
-// console.log(msg.endsWith('you'))
+console.log(msg.endsWith('you'))
 // console.log(msg.endsWith('Hi'))
 
 
