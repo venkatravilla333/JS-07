@@ -585,8 +585,7 @@ This is predefined object in javascript to do math related functionality.
 
    4) floor => It rounds to down value when we have float value.
 
-   5) round => It rounds to up value when we have 0.5 or above and 
-               down value when we have below 0.5.
+   5) round => It rounds to up value when we have 0.5 or above and down value when we have below 0.5.
 
    6) random => It generates random value.
 
