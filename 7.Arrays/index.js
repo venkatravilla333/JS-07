@@ -337,7 +337,100 @@ var arr = [1, 2, 3, 4, 5]
 // console.log(uniqueArr)
 
 
+//Sorting
 
+// var arr = [1, 5, 2, 7, 9, 4]
+
+//single value
+
+// ascending
+
+// var asValue = arr.sort()
+
+// console.log(asValue)
+
+// descending
+// var dsValue = arr.reverse()
+// console.log(dsValue)
+
+//double value
+
+// var arr = [2, 5, 3, 20, 8, 6, 12]
+
+
+// var arr = [{course: 'react'}, {course: 'html'}, {course:'nodejs'}]
+
+// var asValue = arr.sort((a,b) => {
+//   // if (a < b) {
+//   //   return 1
+//   // } else {
+//   //   return -1
+//   // }
+//   if (a.course > b.course) {
+//     return 1
+//   }
+//   if (a.course < b.course) {
+//     return -1
+//   }
+  
+// })
+// console.log(asValue)
+
+//nested loop
+
+// for (var i = 0; i < arr.length; i++){
+//   for (var j = i + 1; j < arr.length; j++){
+//     if (arr[i].course < arr[j].course) {
+//       var temp = arr[i]
+//       arr[i] = arr[j]
+//       arr[j] = temp
+//     }
+//   }
+// }
+
+// console.log(arr)
+
+
+//at method
+
+// var arr = [1, 2, 3, 4, 5]
+// var str = 'hello'
+
+// var result = arr.at(2)
+// var result = arr.at(-2)
+// var result = str.charAt(-2)
+
+// console.log(result)
+
+//fill method (ES-6)
+
+// var arr = [1, 2, 3, 4, 5]
+
+// arr.fill(100)
+// arr.fill('hi')
+
+// console.log(arr)
+
+//Array.from() method
+
+// var str = 'hello'
+
+// var obj = {
+//   length: 5
+// }
+
+// console.log(obj)
+
+// var result = Array.from(obj)
+// console.log(result)
+
+
+// function test() {
+//   console.log(arguments)
+//   var result = Array.from(arguments)
+//   console.log(result)
+// }
+// test(1,2,3,4,5)
 
 
 
