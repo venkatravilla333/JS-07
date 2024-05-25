@@ -434,6 +434,114 @@ var arr = [1, 2, 3, 4, 5]
 
 
 
+//How to convert first letter of given string to capital
+
+// var str = 'Anilkumar'
+
+// var x = str.charAt(0)
+
+// var y = x.toUpperCase()
+
+// console.log(y)
+// var z = y + str.slice(1)
+// var z = y.concat(str.slice(1))
+// console.log(z)
+
+// var result = str.charAt(0).toUpperCase().concat(str.slice(1))
+
+// console.log(result)
+
+// How to change first letter of every word as capital?
+
+
+// var str = 'sachin kohli gill rahul dhoni'
+
+
+// var arr = str.split(' ').map((word) => {
+//  return word.charAt(0).toUpperCase().concat(word.slice(1))
+// })
+
+// console.log(arr)
+// var result = arr.join(' ')
+// console.log(result)
+
+// Repeat a string given no of times.
+
+var str = 'hi how are you'
+
+// var result = str.repeat(10)
+
+// console.log(result)
+
+// function test(str, num) {
+//   if (num > 0) {
+//     return str.repeat(num)
+//   }
+// }
+// console.log(test(str, 5))
+
+//How to reverse a given string
+
+// var str = 'hello'
+
+// var result = str.split('').reverse().join('')
+
+// var result = Array.from(str)
+
+// var x = result.reverse().join('')
+
+// console.log(x)
+
+// How to find given string is palindrome or not?
+
+// function palindrome(str) {
+//   var reversed = str.split('').reverse().join('')
+//   return str === reversed
+// }
+
+// console.log(palindrome('hello'))
+// console.log(palindrome('racecar'))
+
+
+//How to count number of vowels in a string?
+
+// var str = 'hello'
+
+// function findVowels(str) {
+//   var vowels = 'aeiouAEIOU'
+
+//   var count = 0
+
+//   for (var char of str) {
+//     if (vowels.includes(char)) {
+//       count++
+//     }
+//   }
+//   return count
+// }
+
+// console.log(findVowels(str))
+
+
+// Find the logest word in a string?
+
+
+// var str = 'hi how are you sachin'
+
+// function findLongestWord(str) {
+//   var logest = ''
+//   var words = str.split(' ')
+//   for (var word of words) {
+//     if (word.length > logest.length) {
+//       logest = word
+//     }
+//   }
+//   return logest
+// }
+
+// console.log(findLongestWord(str))
+
+
 
 
 
