@@ -1066,6 +1066,191 @@ It mutates the original array and returns the modified array.
 The Array.isArray() static method determines whether the passed value is an Array or not.
 
 
+11) DOM
+   =====
+
+1) What is DOM?
+
+  - DOM stands for Document Object Model. It is a programming interface for web documents, primarily used to access and manipulate the content and structure of web pages. The DOM represents the page as a tree-like structure where each element on the web page, such as HTML tags, text, and attributes, is treated as an object in the tree.
+
+    Here are some key points about the DOM:
+
+  - The DOM represents the structure of HTML document as a tree, where each node in the tree corresponds to an element or part of the document.
+ 
+  - The DOM is dynamic, You can use JavaScript to interact with the DOM, change content, add or remove elements, and respond to user actions.
+
+  - The DOM allows you to attach event listeners to elements on a web page so that you can respond to user interactions like clicks, mouse movements, and keyboard input.
+
+  - Web browsers use the DOM to render web pages. When a web page is loaded, the browser parses the HTML and constructs the DOM tree, which it uses to display and render the page.
+
+
+  - Here's a simple example in JavaScript of how you can use the DOM to manipulate a web page:
+
+  - Get a reference to an DOM element with an 'id' attribute of 'myId'
+
+    var element = document.getElementById("myId");
+
+  - Change the text content of the element
+
+    element.textContent = "Hello, World!";
+
+  - Add a new element to the page
+
+    var newElement = document.createElement("p");
+
+    newElement.textContent = "This is a new paragraph.";
+
+    document.body.appendChild(newElement);
+
+    In this example, we use the DOM to select an element with the ID "myId" change its text content, and create a new paragraph element that is appended to the document body. This demonstrates how the DOM can be used to manipulate the content a web page dynamically.
+
+
+
+2) How to examine DOM 
+
+   console.dir(document) => It gives whole DOM with lot of properties.
+
+
+3) How to read DOM properties 
+
+   document.propertyname => We can read DOM properties by using dot operator or []
+
+
+4) How to select DOM elements
+
+    => id
+    
+     var para1 = document.getElementById('one');
+
+    => class
+
+     var x = document.getElementsByClassName('one');
+
+    => tag
+    
+     var x = document.getElementsByTagName('p');
+
+    => querySelector
+
+     var x = document.querySelector('#one');
+     var x = document.querySelector('.one');
+     var x = document.querySelector('p');
+
+    => querySelectorAll
+
+     var x = document.querySelectorAll('#one');
+     var x = document.querySelectorAll('.one');
+     var x = document.querySelectorAll('p');
+
+  Note: By using id we can get only one element. id is unique.(single element as result) 
+        By using querySelector we can get first element only.(single element as result)
+        By using className we will get html collection in array.
+        By using tagName we will get html collection in array.
+        By using querySelectorAll we will get node list in array.
+
+
+5) Traversing of DOM
+
+    element to parent
+    -----------------
+
+               => element.parentElement
+
+    element to child
+    ----------------
+
+               => element.firstElementChild
+
+               => element.lastElementChild
+
+               => element.children
+
+    element to siblings
+    -------------------
+               => element.previousElementSibling
+
+               => element.nextElementSibling 
+
+6) Adding / removing / replacing DOM elements
+
+   
+   1) Adding
+      ------
+      parent.appendChild(child)
+
+      parent.insertBefore(new child, existing child)
+
+   2) Replacing
+      ---------
+      parent.replaceChild(new child, existing child)
+
+   3) Remove
+      ------
+      element.remove()
+
+      parent.removeChild(child)
+    
+     
+
+7) Adding events to DOM elements from Javascript.
+
+
+    var button = document.getElementById('btn')
+
+
+    DOMelement.addEventListener('eventname', function(event handler), false/true)
+                  
+    - false: Bubling phase
+
+    - true: Capturing phase
+
+
+
+8) Events handling in JS.
+   
+
+   1) Event bubling:
+   -----------------
+  
+   - Event bubbling means propagation of an event is done from child element to ancestor elements in the DOM. 
+   - When an event happens on an element, event first runs the handlers on it, then on its parent, then all the way up on other ancestors. Propagation path is bottom to top. 
+                 
+   2) Event capturing: 
+   -------------------
+
+   - Event capturing means propagation of event is done from ancestor elements to child element in the DOM. Propagation path is top to bottom.
+                   
+   3) Event deligation: 
+   --------------------
+ 
+   - Event delegation in JavaScript is a pattern that efficiently handles events. 
+   - Events can be added to a parent element instead of adding to every single element. 
+   - It refers to the process of using event propagation to handle events at 
+     a higher level in the DOM than the element on which the event originated. 
+   - This can be done on particular target element using the .target property of an event object.
+
+   - when you click the td, the event bubbles up to the table which handles the event.
+
+    Why Event Delegation?
+    --------------------
+
+   - It is useful because the event can be listened to on multiple elements by using 
+     just one event handler. 
+   - It also uses less memory and gives better performance. 
+   - Apart from this,it also requires less time for setting up the event handler on element.
+
+
+
+9) How to improve JS app performance when we firing event in app:
+
+    
+   1) Normal event: It is about firing event every time.
+
+   2) Throttling event: Throtteling is about firing event after every certain time.
+
+   3) Debouncing event: Debouncing is about firing event after every certain time, provided in between there was no event firing.
+
+
 
 
 
