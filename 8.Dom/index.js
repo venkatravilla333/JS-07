@@ -2,8 +2,8 @@
 
 //How to examine DOM
 
-console.log(document)
-console.dir(document)
+// console.log(document)
+// console.dir(document)
 
 //How to read dom properties
 
@@ -86,6 +86,86 @@ console.dir(document)
 // for (var values of childs) {
 //   values.style.background = 'yellow'
 // }
+
+
+
+//How to create and add elements to dom
+
+var para = document.createElement('p')
+
+console.log(para)
+
+para.id = 'myid'
+
+para.className = 'myclass'
+
+// para.innerHTML = 'this is para'
+
+var paraText = document.createTextNode('this is para')
+console.log(paraText)
+
+para.appendChild(paraText)
+
+var body = document.getElementById('body')
+console.log(body)
+
+var addAfterBtn = document.getElementById('addafter')
+console.log(addAfterBtn)
+
+function addAfter() {
+  body.appendChild(para)
+}
+
+addAfterBtn.addEventListener('click', addAfter)
+
+
+var h1 = document.createElement('h1')
+
+h1.id = 'myh1id'
+h1.className = 'myh1class'
+
+h1.innerHTML = 'This is heading one'
+
+
+var addBeforeBtn = document.getElementById('addbefore')
+
+function addBefore() {
+  body.insertBefore(h1, para)
+}
+
+addBeforeBtn.addEventListener('click', addBefore)
+
+
+//How to replace childs in dom
+
+var div = document.createElement('div')
+
+div.id = 'mydiv'
+
+div.innerHTML = 'this is div'
+
+
+var updateBtn = document.getElementById('update')
+
+function update() {
+  
+  body.replaceChild(div, h1)
+}
+
+updateBtn.addEventListener('click', update)
+
+
+
+var deleteBtn = document.getElementById('delete')
+
+
+function deleteFun() {
+  // para.remove()
+
+  body.removeChild(para)
+}
+
+deleteBtn.addEventListener('click', deleteFun)
 
 
 
