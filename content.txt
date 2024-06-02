@@ -1254,5 +1254,186 @@ The Array.isArray() static method determines whether the passed value is an Arra
 
 
 
+12) Asyncronous JS
+==================
+
+
+Synchronous JavaScript:
+----------------------
+As the name suggests synchronous means to be in a sequence, i.e. every statement of the JS code gets executed one by one. So, basically a statement has to wait for the earlier statement to get executed.
+
+Let us understand this with the help of an example.
+
+    console.log("Hi"); // First
+  
+    document.write("Hari") ;// Second
+     
+    document.write("How are you"); // Third
+
+In the above code snippet, the first line of the code 'Hi' will be logged first then the second line 'Hari' will be logged and then after its completion, the third line would be logged 'How are you'.
+So as we can see the codes work in a sequence. Every line of code waits for its previous one to get executed first and then it gets executed.
+
+Asynchronous JavaScript:
+----------------------- 
+Asynchronous code allows the program to be executed immediately where the synchronous code will block further execution of the remaining code until it finishes the current one. This may not look like a big problem but when you see it in a bigger picture you realize that it may lead to delaying the User Interface.
+
+    console.log("Hi");
+    
+    setTimeout(() => {
+        console.log("Hello here what is go to happen");
+    }, 2000);
+  
+    console.log("End");
+
+
+ - So, what the code does is first it logs in 'Hi' then rather than executing the setTimeout function it logs in End and then it runs the setTimeout function. At first, as usual, the Hi statement got logged in. As we use browsers to run JavaScript, there are the web APIs that handle these things for users.
+ 
+ - So, what JavaScript does is, it passes the setTimeout function in such web API and then we keep on running our code as usual. So it does not block the rest of the code from executing and after all the code its execution, it gets pushed to the call stack and then finally gets       executed. This is what happens in asynchronous JavaScript.
+
+
+// console.log('Hello');
+
+// setTimeout(() => {
+//   console.log('one');
+// }, 4000);
+
+// Promise.resolve()
+//   .then(() => console.log('PR-1'))
+//   .then(() => console.log('PR-2'));
+
+// console.log('bye');
+
+// setTimeout(() => {
+//   console.log('two');
+// }, 0);
+
+
+
+   1) Callback functions
+   ---------------------
+
+    - A JavaScript callback is a function which is to be executed after another function has finished execution. 
+    - A more formal definition would be - Any function that is passed as an argument to another function so that it can be executed in that other function is called as a callback function.     
+    - When we have to process the data further then callback syntax will create callback hell situation. we can not read the callback code.
+    
+      Why use callback function in JavaScript?
+
+      Asynchronous programming: 
+
+    - Callbacks are used to handle the results of asynchronous operations, which means that the operation does not block the execution of the rest of the program. 
+    - Instead, the program continues to run and the callback function is executed when the operation is complete.
+
+   2) Promises
+      --------
+
+   - Promises are a way to implement asynchronous programming in JavaScript(ES6 which is also known as ECMAScript-6). A Promise acts as a container for future values.
+
+   - A promise is a JavaScript object that allows you to make asynchronous calls. It produces a value when the async operation completes successfully or produces an error if it doesn't complete.
+ 
+   - let promise = new Promise(function(resolve, reject) { Do something and either resolve or reject})
+
+   - Promise has 3 states 1) pending 2) success 3) failure.
+
+
+    a) Promise.all()
+       -------------
+
+       Promise.all() will reject as soon as one of the Promises in the array rejects.
+
+    b) Promise.allSettled()
+       -------------------
+
+      - whereas Promise.allSettled() waits for all the promises to settle (either resolve or               reject) before returning an array of objects representing each promise's outcome.
+
+      - Promise.allSettled will never reject - it will resolve once all Promises in the array have either rejected or resolved.
+
+    c) Promise.race() 
+       --------------
+
+      - The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.
+      - It returns the winning promise only.
+
+example:
+ 
+  var p1 = new Promise((res, rej) => {
+  setTimeout(() => {
+    res('pr-1');
+  }, 3000);
+  });
+
+  var p2 = new Promise((res, rej) => {
+  setTimeout(() => {
+    res('pr-2');
+  }, 2000);
+  });
+
+  var p3 = new Promise((res, rej) => {
+  setTimeout(() => {
+    res('pr-3');
+  }, 5000);
+  });
+
+  Promise.all([p1, p2, p3]).then((res) => {
+   console.log(res);
+  });
+
+  Promise.allSettled([p1, p2, p3]).then((res) => {
+    console.log(res);
+  });
+
+  Promise.race([p1, p2, p3]).then((res) => {
+    console.log(res);
+  });
+
+
+   3) async and await
+   ------------------
+
+    - Async and await are built on promises. The keyword “async” accompanies the function, indicating that it returns a promise. 
+    - Within this function, the await keyword is applied to the promise being returned. 
+    - The await keyword ensures that the function waits for the promise to resolve.
+
+
+API CALLS
+=========
+
+The fetch() method in JavaScript is used to request data from a server. The request can be of any type of API that returns the data in JSON . The fetch() method requires one parameter, the URL to request, and returns a promise.
+
+api for the get request:
+
+  fetch('url')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
+URL: It is the URL to which the request is to be made.
+
+Return Value: 
+
+It returns a promise whether it is resolved or not. The return data can be of the JSON format. It can be an array of objects or simply a single object.
+
+NOTE: Without options, Fetch will always act as a get request.
+
+
+Making Post Request using Fetch:
+-------------------------------
+ 
+Post requests can be made using fetch by giving options as given below:
+
+var obj = {
+  userId: 101,
+  title: 'my title',
+  body: 'my body',
+};
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  headers: {
+    'Content-type': 'application/json',
+  },
+  body: JSON.stringify(obj),
+}).then((res) => {
+  console.log(res);
+});
 
 
