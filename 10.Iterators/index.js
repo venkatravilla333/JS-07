@@ -17,32 +17,32 @@
 //   console.log(value)
 // }
 
-var person = {
-  fName: 'virat',
-  lName: 'kohli',
-  age: 40,
-  address: 'delhi'
+// var person = {
+//   fName: 'virat',
+//   lName: 'kohli',
+//   age: 40,
+//   address: 'delhi'
 
-}
+// }
 
 
-person[Symbol.iterator] = function () {
+// person[Symbol.iterator] = function () {
 
-  var properties = Object.keys(person)
+//   var properties = Object.keys(person)
 
-  var count = 0
+//   var count = 0
 
-  var next = ()=> {
-    if (count >= properties.length) {
-    return  {done: true, value: undefined}
-    }
-    return {done: false, value: person[properties[count++]]}
-  }
-  return { next }
+//   var next = ()=> {
+//     if (count >= properties.length) {
+//     return  {done: true, value: undefined}
+//     }
+//     return {done: false, value: person[properties[count++]]}
+//   }
+//   return { next }
 
-}
+// }
 
-var iteartorObj= person[Symbol.iterator]()
+// var iteartorObj= person[Symbol.iterator]()
 
 
 
@@ -52,6 +52,8 @@ var iteartorObj= person[Symbol.iterator]()
 // console.log(iteartorObj.next())
 // console.log(iteartorObj.next())
 
-for (var value of person) {
-  console.log(value)
-}
+// for (var value of person) {
+//   console.log(value)
+// }
+
+

@@ -1437,3 +1437,211 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 });
 
 
+13) iterators and generators
+ ===========================
+
+  - Iterator is a new concept introduced in ES-6. It's a kind of new mechanism to iterate or 
+    traverse through data structures. 
+  - Arrays, strings, Maps, Sets all these data collections are iterable.
+
+  Iterable:(object)
+  -------- 
+   An iterable is any object that impliments a method whose key is symbol.iterator 
+   and symbol.iterator method is going return an iterator object.
+
+  Iterator:(object) It returns by symbol.iterator()
+  --------
+  - What is an iterator? An iterator is an object that is going to impliment next method.
+  - This next method knows how to access elements in a collection , next method returns an 
+    object(IteratorResult object).
+  - That IteratorResult object contains two properties {value: any datatype, done: boolean}
+
+
+
+var iterable = [1, 2, 3, 4, 5];
+
+let iterator = iterable[Symbol.iterator]();
+console.log(iterator);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterable.next());
+
+let person = {
+  fname: 'Hari',
+  lname: 'Ravilla',
+};
+
+person[Symbol.iterator] = function () {
+  var properties = Object.keys(person);
+  var count = 0;
+  var isDone = false;
+  var next = () => {
+    if (count >= properties.length) {
+      isDone = true;
+    }
+    return { done: isDone, value: this[properties[count++]] };
+  };
+  return { next };
+};
+
+for (var v of person) {
+  console.log(v);
+}
+
+
+
+
+  By default iterable data structures
+  -----------------------------------
+
+   -array
+   -Map
+   -Set
+   -String
+   -Generator object
+   -arguments object
+
+
+  By default not iterable data structures
+  ---------------------------------------
+
+   -object
+
+
+Generator:
+---------
+
+ -Generators can help you to pause & resume the code.
+ -It is a function which can return multiple values in phases.
+ -The function* is the keyword used to define a generator function.
+ -Yield is an operator which pauses the generator. 
+ -Yield itself is capable of returning any value.
+ -Genarators are iterable.
+ -Next () method returns an object, which has two keys.
+   1) value
+   2) boolean
+ -Generator function returns an itarator object.
+ -To excute generator function we have to call next() method.
+ -When you want to come out of generator function or terminate it you can write return()method, 
+  Writing yield inside finally will not allow the return() to terminate gen function. 
+
+Note: When a generator function is called, it does not call the function instead it returns a generator object.
+Note: next method will start the excution till the yield operator. Next method returns an object which has two keys {value: any datatype, done: true/false}
+
+
+
+
+14) ES-6 Modules
+================
+
+  - Consider a scenario where parts of JavaScript code need to be reused. ES6 comes to rescue with the concept of Modules.
+  - A module organizes a related set of JavaScript code. A module can contain variables and functions. 
+  - A module is nothing but a chunk of JavaScript code written in a file. 
+  - By default, variables and functions of a module are not available for use. 
+  - Variables and functions within a module should be exported so that they can be accessed (imported) from within other files. 
+
+   Named Exports
+   -------------
+   Named exports are distinguished by their names. There can be several named exports in a module. A module can export selected components using the syntax given below −
+
+Syntax 1
+--------
+
+-using multiple export keyword
+
+export component1
+export component2
+...
+...
+export componentN
+
+Syntax 2
+--------
+
+Alternatively, components in a module can also be exported using a single export keyword with {} binding syntax as shown below −
+
+-using single export keyword
+
+export {component1,component2,....,componentN}
+
+
+Default Exports
+---------------
+Modules that need to export only a single value can use default exports. There can be only one default export per module.
+
+Syntax
+------
+export default component_name
+
+However, a module can have one default export and multiple named exports at the same time.
+
+Importing Named Exports
+-----------------------
+
+While importing named exports, the names of the corresponding components must match.
+
+Syntax
+
+import {component1,component2..componentN} from module_name
+
+However, while importing named exports, they can be renamed using the as keyword. 
+
+import {original_component_name as new_component_name }
+
+
+Importing Default Exports
+-------------------------
+
+Unlike named exports, a default export can be imported with any name.
+
+Syntax
+------
+
+import any_variable_name from module_name
+
+Note: We have to do extra 2 tasks 1) type: "module" 2) add .js to file extension
+
+
+
+15) ES-6 Tooling
+================
+
+1) Babel
+   -----
+
+   => Babel is a transpiler for ES6 to ES5, so that browser can understand the JS.
+   => Babel can convert the advanced js and jsx into pure js, which is understand by browser.
+   => It allows web developers to take advantage of the newest features of the JS language.
+
+    This is just for example to show how babel work
+
+     ==> npm init --yes
+
+     ==> npm install babel-cli@6.26.0 babel-core@6.26.0 babel-preset-env@1.6.1 --save-dev
+
+     ==> Create build folder
+
+     ==> In scripts:  "babel": "babel --presets env index.js -o build/index.js"
+
+     ==> npm run babel
+
+   Note: It will create new js file in build folder with ES-5 syntax, We mensioned index.js file in script to run, But if we have more files to run we need to add more files. Solution for this is we have to use Webpack it will take all files at a time and convert into ES-5 them make these files into bundle. Before creating bundle, each file             will be taken by babel to convert into ES-5. After completion of conversion, all files will be bundled by webpack. 
+
+2) Webpack
+   -------
+ 
+   => Webpack is an open-source JavaScript module bundler. It is a build tool that is primarily used for bundling assets of a web application, such as JavaScript files, CSS stylesheets,and images. Webpack takes various modules and their dependencies and bundles them into a single or multiple output files, typically optimized for deployment in a web browser.
+
+   => Webpack can also optimize code and assets for production, reducing the file size of the application and improving performance.
+ 
+   Note: Webapack runs our code through babel and it converted to ES-5.
+
+   ==> Finally make changes in index.html: 
+ 
+       - remove type="module" in script tag and 
+       - change src path, serve the "dist/main.bundle.js"
+       - In scripts:  "build": "webpack -w" This is for automatic build for every changes made.
+       - run everytime to build:  num run build  
