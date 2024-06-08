@@ -1628,7 +1628,7 @@ Note: We have to do extra 2 tasks 1) type: "module" 2) add .js to file extension
 
      ==> npm run babel
 
-   Note: It will create new js file in build folder with ES-5 syntax, We mensioned index.js file in script to run, But if we have more files to run we need to add more files. Solution for this is we have to use Webpack it will take all files at a time and convert into ES-5 them make these files into bundle. Before creating bundle, each file             will be taken by babel to convert into ES-5. After completion of conversion, all files will be bundled by webpack. 
+   Note: It will create new js file in build folder with ES-5 syntax, We mensioned index.js file in script to run, But if we have more files to run we need to add more files. Solution for this is we have to use Webpack it will take all files at a time and convert into ES-5 them make these files into bundle. Before creating bundle, each file  will be taken by babel to convert into ES-5. After completion of conversion, all files will be bundled by webpack. 
 
 2) Webpack
    -------
@@ -1644,4 +1644,124 @@ Note: We have to do extra 2 tasks 1) type: "module" 2) add .js to file extension
        - remove type="module" in script tag and 
        - change src path, serve the "dist/main.bundle.js"
        - In scripts:  "build": "webpack -w" This is for automatic build for every changes made.
-       - run everytime to build:  num run build  
+       - run everytime to build:  num run build
+
+
+       16) ES-6 Destruturing
+=====================
+
+- The destructuring is a JavaScript expression that makes it possible to unpack values from arrays or unpack properties from objects, into individual variables.
+
+1) Objects
+
+2) Arrays
+
+
+
+17) Browser APIs (Timer functions)
+==================================
+
+
+1) setTimeout
+-------------
+
+   setTimeout(function, milliseconds)
+
+   Executes a function, after waiting a specified number of milliseconds.
+
+2) setInterval
+--------------
+
+   setInterval(function, milliseconds)
+
+   Same as setTimeout(), but repeats the execution of the function continuously.
+
+3) clearTimeout
+---------------
+
+   The clearTimeout() method clears a timer set with the setTimeout() method.
+
+   var myTimeout = setTimeout(function, milliseconds);
+
+   clearTimeout(myTimeout);
+
+4) clearInterval
+----------------
+
+   The clearInterval() method clears a timer set with the setInterval() method.
+
+   let myVar = setInterval(function, milliseconds);
+
+   clearInterval(myVar);
+
+
+
+18) Miscellaneous topics (related to functions)
+========================
+
+
+1) IIFE (Immediately Invocable Function Expression) (ES-5)
+-------
+
+    =>An IIFE is a way to excute functions immediately as soon as they are created.
+    =>The most usecase of an IIFE is to restrict the scope of variables to local so that they don't pollute the global context.
+    =>It helps in making our variables and methods private.
+    =>Any function or variable defined inside IIFE can not be accessed outside of the IIFE block, thus preventing global scope from getting polluted.
+    =>It's often used to create private variables and functions.
+ 
+2) Function currying?
+--------------------
+
+  =>Function currying is a technique of trasforming (converting) a function with multiple parameters into multiple functions with single parameter.
+  =>It helps to avoid passing same value again and again.
+
+
+3) first class function?
+------------------------
+
+  =>A programming language is said to have First-class functions when functions in that language are treated like any other variable. 
+  =>For example, in such language, a function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.
+
+
+4) heigher order function?
+--------------------------
+  
+  =>A function that receives another function as an argument or that returns a new function or both is called Higher-order function. Higher-order functions are only possible because of the First-class functions.
+
+
+5) pure function? 
+-----------------
+
+   =>Pure function always returns the same result if the same arguments are passed in. 
+   =>It does not depend on any state, or data, change during a program's execution. It must only depend on its input arguments . 
+   =>They do not have any side effects like network or database calls and do not modify the arguments which are passed to them.
+   =>We can predict the output from pure function.
+
+   
+6) impure function?
+-------------------
+
+  =>Any function that changes the internal state of one of its arguments or the value of some external variable is an impure function. 
+  =>They may have any side effects like network or database calls and it may modify the arguments which are passed to them.
+  =>We can not predict output from impure fucntion.
+
+
+7) Recursion function:
+---------------------
+
+ - A function that calls itself is recursion. Recursion in JavaScript is a recursive call of the function to itself, where the function calls itself, again and again, (recursively) until given condition becomes false.
+
+calculate factorial:
+
+function factorial(n) {
+  if (n <= 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+let result = factorial(5);
+console.log(result);
+
+  
