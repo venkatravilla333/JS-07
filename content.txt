@@ -1764,4 +1764,68 @@ function factorial(n) {
 let result = factorial(5);
 console.log(result);
 
+
+19) Types of errors in javascript
+    =============================
+
+
+1) Syntax error: 
+   ------------
+
+The error occurs when you use a predefined syntax incorrectly.
+
+ex :
+
+var obj = {
+  name = 'hari'
+}
+
+2) Reference error:
+   ---------------
+
+A ReferenceError occurs when you try to access a variable that doesn't exist in memory.
+
+ex:
+
+console.log(x);
+
+
+3) Type error:
+   ----------
+
+A TypeError occurs when the variable exists, but the operation you're trying to perform on it is not appropriate for the type of value it contains.
+
+ex :
+
+var x = 100;
+x.push(10);
+
+
+
+
+20) Errors handling in JavaScript:
+=================================
+ 
+ - Handling errors in JavaScript is essential to ensure your code is clean and provides a good user experience. JavaScript provides several mechanisms to handle errors effectively. Here are some common methods:
+
+   Using try...catch:
+
+ - The try...catch block allows you to handle exceptions (errors) that occur within a specific block of code. You can place the code that might throw an error inside the try block, and if an error occurs, it will be caught and processed in the catch block.
+
+  try => try statement lets you test a block of code for error.
+
+  catch => catch statement lets you handle the error.
+
+  throw => throw statement lets you create custom errors.
+
+  try{
+
+    code to be tested for error
+  }
+  catch(error){
+
+    error handling
+  } 
+
+
   
