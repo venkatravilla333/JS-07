@@ -38,3 +38,16 @@
 //   console.log(100)
 // }
 // console.log('hello')
+
+
+// var age = 18
+
+// console.log('sachin')
+
+// if (age<18) {
+//   throw('age must be more than 18 to have vote')
+// } else {
+//   console.log('having vote right')
+// }
+
+// console.log('bye')
