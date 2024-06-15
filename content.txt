@@ -2098,6 +2098,292 @@ Truthy values and falsy values in javascript
 => ({ a: 1 });      // true
 
 
+23) Data structures
+    ===============
+
+In JavaScript, keys of objects are always strings or symbols. Even if you use a number as a key, it gets converted to a string. Here's an example to illustrate this:
+
+let obj = {
+  name: "Alice",
+  age: 25,
+  1: "one",
+  true: "boolean",
+  null: "null",
+  undefined: "undefined",
+  symbolKey: Symbol("symbolValue")
+};
+
+for (let key in obj) {
+  console.log(`${key}: ${typeof key}`);
+}
+
+
+In this example, even though some keys appear to be numbers, booleans, null, or undefined, they are all converted to strings. The output will be:
+
+1: string
+name: string
+age: string
+true: string
+null: string
+undefined: string
+symbolKey: string
+
+Symbols are a special case. If a symbol is used as a key, it does not show up in a regular for...in loop or Object.keys() method. To handle symbols, you can use Object.getOwnPropertySymbols.
+
+Here's how you can identify both string and symbol keys in an object:
+
+let obj = {
+  name: "Alice",
+  age: 25,
+  [Symbol("symbolKey")]: "symbolValue"
+};
+
+// Check string keys
+
+for (let key in obj) {
+  console.log(`${key}: ${typeof key}`);
+}
+
+// Check symbol keys
+
+let symbolKeys = Object.getOwnPropertySymbols(obj);
+for (let sym of symbolKeys) {
+  console.log(`${sym.toString()}: ${typeof sym}`);
+}
+
+
+In JavaScript, keys of objects are always strings or symbols. Even if you use a number as a key, it gets converted to a string. Here's an example to illustrate this:
+
+javascript
+Copy code
+let obj = {
+  name: "Alice",
+  age: 25,
+  1: "one",
+  true: "boolean",
+  null: "null",
+  undefined: "undefined",
+  symbolKey: Symbol("symbolValue")
+};
+
+for (let key in obj) {
+  console.log(`${key}: ${typeof key}`);
+}
+In this example, even though some keys appear to be numbers, booleans, null, or undefined, they are all converted to strings. The output will be:
+
+
+1: string
+name: string
+age: string
+true: string
+null: string
+undefined: string
+symbolKey: string
+Symbols are a special case. If a symbol is used as a key, it does not show up in a regular for...in loop or Object.keys() method. To handle symbols, you can use Object.getOwnPropertySymbols.
+
+Here's how you can identify both string and symbol keys in an object:
+
+let obj = {
+  name: "Alice",
+  age: 25,
+  [Symbol("symbolKey")]: "symbolValue"
+};
+
+// Check string keys
+
+for (let key in obj) {
+  console.log(`${key}: ${typeof key}`);
+}
+
+// Check symbol keys
+
+let symbolKeys = Object.getOwnPropertySymbols(obj);
+for (let sym of symbolKeys) {
+  console.log(`${sym.toString()}: ${typeof sym}`);
+}
+
+This will output:
+
+name: string
+age: string
+Symbol(symbolKey): symbol
+
+In summary, JavaScript object keys are either strings or symbols. Regular object keys (including those that look like numbers or booleans) are converted to strings, and symbol keys need to be handled separately using Object.getOwnPropertySymbols().
+
+
+
+When to use map:
+
+With map, you can use any type (and values) as keys.
+Map provides better performance for large quantities of data.
+Use a map for better performance when adding and removing data frequently.
+
+When to use an object:
+
+Objects can only use strings, and symbols as keys.
+Objects are perfect for small to medium-sized sets of data.
+Objects have better performance and are easier to create.
+
+
+map
+---
+
+Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+
+how to create empty
+-------------------
+
+var obj = {}
+
+var map = new Map(); 
+
+how to initialize with values 
+-----------------------------
+
+var obj = {name: 'sachin', age: 40}
+
+const map = new Map([ [ 'one', 1 ], [ 'two', 2 ] ]);
+
+how to add new properties
+-------------------------
+
+obj[color] = 'red'
+obj.color = 'red' 
+
+map.set(key, value) -- stores the value by the key.
+
+how to get or access values
+---------------------------
+
+obj.key
+obj['key']
+
+map.get(key) -- returns the value by the key, undefined if key doesn't exist in map.
+
+how to check specific key is there
+----------------------------------
+
+The in operator checks if a key exists in the object, including keys from the prototype chain.
+
+The hasOwnProperty method checks if a key exists directly on the object, not considering keys from the prototype chain.
+
+console.log('name' in obj)
+console.log(obj.hasOwnProperty('name'))
+
+map.has(key) -- returns true if the key exists, false otherwise.
+
+how to delete specific key 
+--------------------------
+
+delete obj.name;
+
+map.delete(key) -- removes the value by the key.
+
+how to delete all keys
+----------------------
+
+
+Using a loop with the delete operator
+
+for (let key in obj1) {
+  if (obj1.hasOwnProperty(key)) {
+    delete obj1[key];
+  }
+}
+
+Setting the object to an empty object
+
+obj = {};
+console.log(obj); // {}
+
+
+map.clear() -- clears the map
+
+how to find length
+------------------
+
+alt:1
+
+let length = Object.keys(obj).length;
+
+alt:2
+
+let length = 0;
+for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    length++;
+  }
+}
+
+alt:3
+
+let length = Object.getOwnPropertyNames(obj).length;
+
+map.size -- returns the current element count.
+
+how to loop keys
+----------------
+alt:1
+
+for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    console.log(`${key}: ${obj[key]}`);
+  }
+}
+
+alt:2
+
+let keys = Object.keys(obj);
+
+for (let i = 0; i < keys.length; i++) {
+  let key = keys[i];
+  console.log(`${key}: ${obj[key]}`);
+}
+
+alt:3
+
+
+Object.keys(obj).forEach(key => {
+  console.log(`${key}: ${obj[key]}`);
+});
+
+Similar to objects, there are three methods you can use for looping over Maps:
+
+map.keys() returns an iterable containing the keys
+map.values() returns an iterable containing the values
+map.entries() returns an iterable containing the [key, value] pairs
+
+how to convert
+--------------
+
+let map = new Map(Object.entries(obj));
+
+let obj = Object.fromEntries(map);
+
+how to destructure 
+------------------
+
+
+let { one, two } = obj;
+
+let { one, two } = map;
+
+console.log(one) // undefined
+
+// But you can destructure it similar to an array where you destructure by the order items were added into the map
+
+let [ firstEntry, secondEntry ] = map;
+
+console.log(firstEntry) // ["one", 1]
+console.log(secondEntry) // ["two", 2]
+
+-remember the regular Object? it would convert keys to string.
+-Map keeps the type, so these two are different.
+-As we can see, unlike objects, keys are not converted to strings. Any type of key is possible.
+-Map can also use objects as keys.
+
+
+
 
 
   
