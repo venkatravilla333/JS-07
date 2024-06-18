@@ -123,20 +123,20 @@
 
 //how to delete specific key
 
-var obj = {
-  name: 'sachin',
-  age: 40
-}
+// var obj = {
+//   name: 'sachin',
+//   age: 40
+// }
 
 // delete obj.name
 // console.log(obj)
 // delete obj.age
 // console.log(obj)
 
-var myMap = new Map()
+// var myMap = new Map()
 
-myMap.set('name', 'sachin')
-myMap.set('age', 40)
+// myMap.set('name', 'sachin')
+// myMap.set('age', 40)
 
 // myMap.delete('name')
 // myMap.delete('age')
@@ -181,22 +181,14 @@ myMap.set('age', 40)
 // console.log(name)
 // console.log(age)
 
-console.log(myMap.get('name'))
-console.log(myMap.get('age'))
+// console.log(myMap.get('name'))
+// console.log(myMap.get('age'))
 
 
-var [v1, v2] = myMap
+// var [v1, v2] = myMap
 
-var [name] = v1
-var [age] = v2
-console.log(name)
-console.log(age)
-
-
-
-
-
-
-
-
+// var [name] = v1
+// var [age] = v2
+// console.log(name)
+// console.log(age)
 

@@ -2383,7 +2383,41 @@ console.log(secondEntry) // ["two", 2]
 -Map can also use objects as keys.
 
 
+map vs weakMap
+--------------
 
+In a Weak Map, every key can only be an object and function. It is used to store weak object references.
+
+One main difference when using a WeakMap is that the keys have to be objects, not primitive values. Which means they will pass by reference.
+
+So why use a WeakMap? The major advantage of using a WeakMap over a Map is memory benefits.
+
+Objects that are not-reachable get garbage collected, but if they exist in as a key in another reachable structure then they won't get garbage collected.
+
+WeakMap does not prevent garbage-collection of it's key objects.
+
+WeakMaps only have the following methods: get, set, delete, has.
+
+It does not support for clear, size, keys, values, forEach
+
+
+set vs weekSet
+--------------
+
+It is used to store a collection of objects similar to that of set the only difference is that these values are only object and not some particular data type.
+
+Sets can store any value. WeakSets are collections of objects only.
+WeakSet does not have size property.
+WeakSet does not have clear, keys, values, entries, forEach methods.
+WeakSet is not iterable.
+
+summary
+-------
+
+-Use Map when you need to associate values with keys.
+-Use WeakMap when you want to associate values with keys and the keys should not prevent garbage  collection.
+-Use Set when you need a collection of unique values.
+-Use WeakSet when you need a collection of unique objects, and the objects should not prevent  garbage collection.
 
 
   
