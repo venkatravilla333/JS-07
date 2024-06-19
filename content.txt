@@ -2420,4 +2420,175 @@ summary
 -Use WeakSet when you need a collection of unique objects, and the objects should not prevent  garbage collection.
 
 
+24) Browser Object Model (Bom)
+    ==========================
+
+The Browser Object Model (BOM) allows JavaScript to "talk to" the browser. 
+The Browser Object Model (BOM) is a set of objects provided by web browsers that allows JavaScript to interact with the browser environment. 
+
+Here are some key objects in the Browser Object Model:
+
+The Browser Object Model (BOM) is used to interact with the browser.
+
+The default object of browser is window means you can call all the functions of window by specifying window or directly. For example:
+
+You can use a lot of properties (other objects) defined underneath the window object like document, history, screen, navigator, location.
+
+The window object represents a window in browser. An object of window is created automatically by the browser.
+
+Window is the object of browser, it is not the object of javascript. The javascript objects are string, array, date, math etc.
+
+
+1. window Object:
+   -------------
+-A window object is created automatically by the browser itself. 
+
+-The window object is the top-level object in the BOM hierarchy and represents the browser window.
+
+-It contains properties and methods that allow to interaction with the browser window.
+
+-The window object is supported by all browsers. It represents the browser's window.
+
+-All global JavaScript objects, functions, and variables automatically become members of the   window object.
+
+-Global variables are properties of the window object.
+
+-Global functions are methods of the window object.
+
+-Even the document object (DOM) is a property of the window object.
+
+-Two properties can be used to determine the size of the browser window.
+
+window.innerHeight - the inner height of the browser window (in pixels)
+window.innerWidth - the inner width of the browser window (in pixels)
+
+-timimg functions:
+
+window.setTimeout()
+window.setInterval()
+window.clearTimeout()
+window.clearInterval()
+
+-popup functions:
+
+window.alert()
+window.confirm()
+window.prompt()
+
+window.open() - open a new window
+window.close() - close the current window
+window.moveTo() - move the current window
+window.resizeTo() - resize the current window
+
+
+2. document Object:
+   ---------------
+
+The document object represents the HTML document loaded in the browser window.
+
+It provides methods and properties to manipulate the content and structure of the document.
+
+// Examples of document object properties
+
+console.log(document.title);     // Title of the document
+console.log(document.body);      // Body element of the document
+
+// Examples of document object methods
+
+document.getElementById('myElement');    // Returns the element with the specified ID
+document.createElement('div');            // Creates a new HTML element
+
+3. navigator Object:
+   ----------------
+
+The navigator object provides information about the browser and the user's system.
+
+Examples of navigator object properties
+
+console.log(navigator.appName);  
+The appName property returns the application name of the browser.
+
+console.log(navigator.platform);   
+Operating system platform
+
+navigaror.language
+The language property returns the browser's language:
+
+Is The Browser Online?
+navigator.onLine;``
+The onLine property returns true if the browser is online:
+
+
+4. screen Object:
+   -------------
+
+The screen object represents the user's screen and provides information about its size and resolution.
+
+// Examples of screen object properties
+
+console.log(screen.width);     // Width of the screen
+console.log(screen.height);    // Height of the screen
+
+5. location Object:
+   ---------------
+
+The location object provides information about the current URL and allows you to navigate to different URLs.
+
+The window.location object can be used to get the current page address (URL) and to redirect the browser to a new page.
+
+// Examples of location object properties
+
+console.log(location.href);     // Full URL of the current page
+console.log(location.pathname); // Path of the current URL
+
+// Example of location object method
+
+location.assign('https://www.example.com');  // Navigates to the specified URL
+
+window.location.href returns the href (URL) of the current page
+window.location.hostname returns the domain name of the web host
+window.location.pathname returns the path and filename of the current page
+window.location.protocol returns the web protocol used (http: or https:)
+The window.location.assign() method loads a new document.
+
+<h3>The window.location object</h3>
+
+<script>
+function newDoc() {
+  window.location.assign("https://www.youtube.com")
+}
+</script>
+
+
+6) History object
+   ---------------
+
+The history object contains the URLs visited by the user (in the browser window).
+
+The history object is a property of the window object.
+
+The history object is accessed with:
+
+window.history or just history:
+
+back()	        Loads the previous URL (page) in the history list 
+                (Will only work if a previous page exists in your history list)
+
+forward()	Loads the next URL (page) in the history list
+                (Will only work if a next page exists in your history list)
+
+go()	        Loads a specific URL (page) from the history list
+
+                (Will only work if the previous pages exist in your history list)
+
+lengthReturns the number of URLs (pages) in the history list
+
+
+][history.go(0) reloads the page.
+
+history.go(-1) is the same as history.back().
+
+history.go(1) is the same as history.forward().
+
+
   
