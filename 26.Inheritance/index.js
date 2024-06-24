@@ -96,12 +96,80 @@ var myObj = {
 // var objbase = Object.getPrototypeOf(myObj)
 // console.log(Object.getOwnPropertyDescriptor(objbase, 'play'))
 
-
-
-
 // console.log(Object.getOwnPropertyDescriptor(myObj, 'name'))
 // console.log(Object.getOwnPropertyDescriptor(myObj, 'age'))
 // console.log(Object.getOwnPropertyDescriptor(myObj, 'play'))
+
+
+//How to create own inheritance
+
+// function Wood(name) {
+//   this.name = name
+// }
+
+// Wood.prototype.cut = function () {
+//   console.log('cut')
+// }
+
+// var w = new Wood('sachin')
+// console.log(w.name)
+
+// Chair.prototype = Object.create(Wood.prototype)
+// Chair.prototype.constructor = Chair
+// Table.prototype = Object.create(Wood.prototype)
+// Table.prototype.constructor = Chair
+
+// console.log(new Chair.prototype.constructor)
+
+// function Chair(name) {
+//   this.age = 40
+//   Wood.call(this, name) // es-6 super()
+// }
+
+// Chair.prototype.cut = function () {
+  //   console.log('cut')
+  // }
+
+//   var c = new Chair('kohli')
+// console.log(c)
+// c.cut()
+// console.log(c.name)
+
+// function Table(name) {
+//   Wood.call(this, name) // es-6 super()
+  
+// }
+// var t = new Table('Dhoni')
+// t.cut()
+// console.log(t.name)
+
+
+
+//method overriding
+
+
+
+function Test() {
+  
+  this.play = function () {
+    Test.prototype.play.call(this)
+    console.log('own play')
+  }
+}
+
+Test.prototype.play = () => {
+  console.log('proto play')
+}
+
+var test1 = new Test()
+
+test1.play()
+
+
+
+
+
+
 
 
 
